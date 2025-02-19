@@ -7,13 +7,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenShotPrac {
-    WebDriver driver;
-    String timestamp;
-    TakesScreenshot ts;
 
-    void photo() {
+
+    void photo(WebDriver driver) {
+        String timestamp = new SimpleDateFormat("yyMMdd_HHmmss").format(new Date());
+
+        TakesScreenshot ts = (TakesScreenshot) driver;
         File sourcefile = ts.getScreenshotAs(OutputType.FILE);
-        File targetfile = new File(System.getProperty("user.dir") + "//kabil.png");
+        File targetfile = new File(System.getProperty("user.dir") + "//screen//kabil1"+timestamp+".png");
         sourcefile.renameTo(targetfile);
         System.out.println(targetfile);
     }
@@ -33,9 +34,9 @@ public class ScreenShotPrac {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com/");
-        WebElement speci = driver.findElement(By.xpath("//div[@class=\"_3bzdSa\"]"));
+      //  WebElement speci = driver.findElement(By.xpath("//div[@class=\"_3bzdSa\"]"));
         // driver.manage().window().maximize();
-        obj.photo();
+        obj.photo(driver);
 
 
     }}
