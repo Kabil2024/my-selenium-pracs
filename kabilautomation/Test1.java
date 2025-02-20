@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Test1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.codashop.com/en-in/");
         System.out.println(driver.getTitle());
@@ -19,10 +19,10 @@ public class Test1 {
         driver.manage().window().maximize();
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getWindowHandle());
-       // driver.navigate().to("https://www.codashop.com/en-in/");
+        // driver.navigate().to("https://www.codashop.com/en-in/");
         WebElement contact = driver.findElement(By.xpath("//a[@class=\"footer__contact-link\"]"));
-        js.executeScript(("arguments[0].click();"),contact);
-      Set<String> tab = driver.getWindowHandles();
+        js.executeScript(("arguments[0].click();"), contact);
+        Set<String> tab = driver.getWindowHandles();
         List<String> tabid = new ArrayList<>(driver.getWindowHandles());
         System.out.println(tabid);
         driver.switchTo().window(tabid.get(1));
@@ -32,6 +32,9 @@ public class Test1 {
         email.sendKeys("kabakaba");
         WebElement subject = driver.findElement(By.xpath("//input[@id='request_subject']"));
         subject.sendKeys("jhjghrjg");
+        Thread.sleep(4000);
+        driver.close();
+        driver.quit();
 
 
     }

@@ -7,7 +7,7 @@ public class ChromeOption {
         options.setAcceptInsecureCerts(true);
         //options.setExperimentalOption("excludeSwitches",new String[] {"enable-automation"}); //to remove chrome is being controlled by automated
 //        options.addArguments("--headless=new");
-       ChromeDriver driver1 = new ChromeDriver(options);
+        ChromeDriver driver1 = new ChromeDriver(options);
 //        driver1.get("https://www.flipkart.com/");
 //        System.out.println(driver1.getCurrentUrl());
 //        if (driver1.getTitle().equals("Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!")){
