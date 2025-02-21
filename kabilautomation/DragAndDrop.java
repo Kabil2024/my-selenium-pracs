@@ -13,7 +13,7 @@ public class DragAndDrop {
         driver.get("https://www.globalsqa.com/demo-site/draganddrop/");
 //        WebElement DD = driver.findElement(By.xpath("//span[@class='link_span'][normalize-space()='Drag And Drop']"));
 //        DD.click();
-        WebElement iframe =driver.findElement(By.xpath("//iframe[@class=\"demo-frame lazyloaded\"]"));
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class=\"demo-frame lazyloaded\"]"));
         driver.switchTo().frame(iframe);
         WebElement img1 = driver.findElement(By.xpath("//img[@alt='Planning the ascent']"));
         WebElement target = driver.findElement(By.xpath("//div[@id='trash']"));
