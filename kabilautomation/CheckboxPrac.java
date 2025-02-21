@@ -14,7 +14,7 @@ public class CheckboxPrac {
         redbutton.click();
         List<WebElement> checboxes = driver1.findElements(By.xpath("//input[@type=\"checkbox\"]"));
         System.out.println(checboxes.size());
-        for (int i = 0;i <= 5;i++){
+        for (int i = 0; i <= 5; i++) {
             checboxes.get(i).click();
         }
     }
