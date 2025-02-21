@@ -9,7 +9,7 @@ import java.util.Date;
 public class ScreenShotPrac {
 
 
-    void photo(WebDriver driver) {
+    public void photo(WebDriver driver) {
         String timestamp = new SimpleDateFormat("yyMMdd_HHmmss").format(new Date());
 
         TakesScreenshot ts = (TakesScreenshot) driver;
