@@ -11,7 +11,6 @@ public class ScreenShotPrac {
 
     public void photo(WebDriver driver) {
         String timestamp = new SimpleDateFormat("yyMMdd_HHmmss").format(new Date());
-
         TakesScreenshot ts = (TakesScreenshot) driver;
         File sourcefile = ts.getScreenshotAs(OutputType.FILE);
         File targetfile = new File(System.getProperty("user.dir") + "//screen//kabil1"+timestamp+".png");
