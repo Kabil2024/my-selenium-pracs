@@ -2,20 +2,22 @@ package testNGpractices;
 
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-public class test1 {
-    @Test(priority = 1)
-    void tc1() {
-        Reporter.log("");
-        Reporter.log("<br><a href='kabil1250224_135456.png'> <img src='kabil1250224_135456.png' height='200' width='300'/></a><br>");
-        Reporter.log("<br><a href='kabil1250224_181252.png'> <img src='kabil1250224_181252.png' height='200' width='300'/></a><br>");
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+public class test1 extends ScreenShotPrac{
+    @Test(priority = 1, groups = "kvs")
+    void tc1() {
         System.out.println("print tc1");
     }
-    @Test(priority = 2)
-    void tc2(){
+
+    @Test(priority = 2, groups = {"kvs","loveboys"})
+    void tc2() {
         System.out.println("print tc2");
         Reporter.log("haiiiii");
 
