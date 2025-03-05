@@ -12,5 +12,13 @@ public class FindDuplicatesInString {
                 System.out.print(dup+" ");
             }
         }
+        System.out.println();
+        String words = "hello hai is love hello hai";
+        System.out.print("duplicates : ");
+    for (String x :words.split(" ")){
+        if (!set.add(x)){
+            System.out.print(x +" ");
+        }
+    }
     }
 }

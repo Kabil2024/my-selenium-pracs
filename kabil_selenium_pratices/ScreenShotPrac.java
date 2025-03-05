@@ -13,7 +13,7 @@ public class ScreenShotPrac {
         String timestamp = new SimpleDateFormat("yyMMdd_HHmmss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) driver;
         File sourcefile = ts.getScreenshotAs(OutputType.FILE);
-        File targetfile = new File(System.getProperty("user.dir") + "//screen//kabil1"+timestamp+".png");
+        File targetfile = new File(System.getProperty("user.dir") + "//test-output//junitreports//kabil1"+timestamp+".png");
         sourcefile.renameTo(targetfile);
         System.out.println(targetfile);
     }
