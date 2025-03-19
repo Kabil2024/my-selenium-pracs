@@ -4,19 +4,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
-public class Dataprovider3 {
+public class ParallelTesting {
     WebDriver driver;
+    @Parameters({"browser"})
     @BeforeClass
-    void setup (){
-        driver = new ChromeDriver();
+    void setup (String brow){
+        if (brow.equalsIgnoreCase("chrome")){
+            driver = new ChromeDriver();
+        } else if (brow.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+        }else {
+            System.out.println("invalid browser name");return;
+        }
         driver.get("https://practicetestautomation.com/practice-test-login/");
     }
     @Test(dataProvider = "data1")
